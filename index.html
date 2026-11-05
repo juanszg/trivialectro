@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b18">
+  <title>Electricidad y Magnetismo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <div class="stars stars-far"></div><div class="stars stars-near"></div>
+    <div class="nebula nebula-one"></div><div class="nebula nebula-two"></div>
+    <div class="planet"><div class="planet-glow"></div><div class="planet-surface"></div><div class="planet-ring"></div></div>
+    <div class="scanlines"></div><div class="vignette"></div>
+  </div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Inicio"><span class="brand-mark">ϟ</span></a>
+      <div class="top-meta"><span class="status-dot"></span> TRANSMISIÓN ESTELAR <span class="meta-divider">◆</span> SISTEMA ACTIVO</div>
+      <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false" title="Activar o desactivar sonido"><span id="soundIcon">♫</span><span class="sound-label">SONIDO</span></button>
+    </header>
+
+    <section class="intro" id="intro">
+      <div class="eyebrow"><span></span> UNA AVENTURA DE CIENCIA Y ENERGÍA <span></span></div>
+      <h1>ELECTRICIDAD<br><em>Y MAGNETISMO</em></h1>
+      <p class="intro-copy">¿Tienes lo necesario para dominar las fuerzas invisibles del universo?</p>
+      <div class="intro-details"><span>25 PREGUNTAS</span><i>✦</i><span>2 COMODINES 50:50</span><i>✦</i><span>UNA GRAN RECOMPENSA</span></div>
+      <button class="primary-button start-button" id="startButton"><span>ENTRAR AL DESAFÍO</span><b>→</b></button>
+      <p class="shuffle-note">Las preguntas y sus opciones cambian de orden en cada partida.</p>
+    </section>
+
+    <section class="game-layout hidden" id="game" aria-live="polite">
+      <div class="game-main">
+        <div class="game-heading"><div><span class="eyebrow small">RONDA <span id="roundNumber">01</span> / 25</span><h2>El conocimiento es tu llave.</h2></div><div class="progress-ring" id="progressRing"><span id="progressText">0%</span></div></div>
+        <div class="meter-wrap"><div class="meter-label"><span>PROGRESO DEL DESAFÍO</span><span id="progressCount">0 de 25</span></div><div class="meter"><div class="meter-fill" id="meterFill"></div></div></div>
+        <article class="question-card" id="questionCard">
+          <div class="question-topline"><span class="question-tag"><span>✦</span> PREGUNTA <b id="questionNumber">01</b></span><span class="reward"><span>◆</span> <b id="rewardValue">100</b> PTS</span></div>
+          <h3 id="questionText">Preparando el desafío…</h3>
+          <div class="answers" id="answers"></div>
+          <div class="feedback hidden" id="feedback" role="status" aria-live="polite"></div>
+          <div class="question-actions"><div class="lifelines-label">TUS COMODINES <span id="lifelineCount">2 disponibles</span></div><button class="lifeline" id="lifelineButton" type="button"><span class="lifeline-icon">½</span><span><b>50 : 50</b><small>ELIMINA DOS OPCIONES</small></span><span class="lifeline-remaining" id="lifelinePips"><i></i><i></i></span></button><button class="primary-button next-button hidden" id="nextButton"><span>CONTINUAR</span><b>→</b></button></div>
+        </article>
+        <div class="bottom-note"><span>⌁</span> PIENSA CON CALMA. CADA CAMPO TIENE SU HISTORIA.</div>
+      </div>
+      <aside class="ladder-panel"><div class="ladder-title"><span class="gear-small">⚙</span><div><span>ESCALERA DE</span><b>CONOCIMIENTO</b></div></div><div class="ladder-scroll"><ol class="ladder" id="ladder"></ol></div><div class="ladder-footer"><span class="mini-seal">ϟ</span><span>LA CURIOSIDAD<br><b>ES LA RECOMPENSA</b></span></div></aside>
+    </section>
+
+    <section class="results hidden" id="results" aria-live="polite"></section>
+    <footer class="footer"><span>✦</span> HECHO PARA EXPLORAR LAS FUERZAS INVISIBLES <span>✦</span></footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
